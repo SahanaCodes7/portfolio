@@ -174,18 +174,17 @@
         }
 
         #hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: 
-        radial-gradient(circle at 20% 80%, rgba(255, 105, 180, 0.15) 0%, transparent 20%), /* soft pink glow */
-        radial-gradient(circle at 80% 20%, rgba(102, 51, 255, 0.15) 0%, transparent 20%); /* purple glow */
-    z-index: 0;
-}
-
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(255, 105, 180, 0.15) 0%, transparent 20%),
+                radial-gradient(circle at 80% 20%, rgba(102, 51, 255, 0.15) 0%, transparent 20%);
+            z-index: 0;
+        }
 
         .hero-content {
             display: flex;
@@ -746,30 +745,22 @@
         }
 
         .timeline {
-    position: relative;
-    margin: 50px auto;
-    padding: 20px 0;
-    width: 90%;
-}
-
-.timeline::before {
-    content: '';
-    position: absolute;
-    top: 0;  /* starts at first card */
-    left: 50%;
-    transform: translateX(-50%);
-    width: 2px;
-    height: 100%;
-    background: var(--gradient-1);
-    z-index: 0;
-}
-
-}
-
-        .timeline {
             position: relative;
-            max-width: 800px;
-            margin: 0 auto;
+            margin: 50px auto;
+            padding: 20px 0;
+            width: 90%;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: var(--gradient-1);
+            z-index: 0;
         }
 
         .timeline-item {
@@ -907,141 +898,251 @@
             font-weight: 500;
         }
 
-        /* Contact Section */
-       /* Contact Section */
-#contact {
-    background: var(--charcoal-black);
-    position: relative;
-    padding: 80px 0;
-}
+        /* Enhanced Contact Section */
+        #contact {
+            background: var(--charcoal-black);
+            position: relative;
+            padding: 80px 0;
+        }
 
-#contact::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: 
-        url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='2' cy='2' r='2' fill='%23ff69b4' fill-opacity='0.05'/%3E%3C/svg%3E");
-    z-index: 0;
-}
+        #contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='2' cy='2' r='2' fill='%23ff69b4' fill-opacity='0.05'/%3E%3C/svg%3E");
+            z-index: 0;
+        }
 
-.contact-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 50px;
-    position: relative;
-    z-index: 1;
-}
+        .contact-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+            position: relative;
+            z-index: 1;
+        }
 
-/* Contact Info */
-.contact-info {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-}
+        /* Contact Info */
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
 
-.contact-item {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    padding: 15px;
-    border-radius: 12px;
-    background: rgba(255, 255, 255, 0.03);
-    transition: all 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-}
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.03);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
 
-.contact-item:hover {
-    background: rgba(255, 105, 180, 0.08);
-    transform: translateY(-3px);
-    box-shadow: 0 5px 20px rgba(255, 105, 180, 0.2);
-}
+        .contact-item:hover {
+            background: rgba(255, 105, 180, 0.08);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(255, 105, 180, 0.2);
+        }
 
-/* Icons */
-.contact-icon {
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.05);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.3rem;
-    color: var(--rose-pink);
-    transition: all 0.3s ease;
-}
+        /* Icons */
+        .contact-icon {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            color: var(--rose-pink);
+            transition: all 0.3s ease;
+        }
 
-.contact-item:hover .contact-icon {
-    background: var(--gradient-1);
-    color: var(--pearl-white);
-    box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3);
-}
+        .contact-item:hover .contact-icon {
+            background: var(--gradient-1);
+            color: var(--pearl-white);
+            box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3);
+        }
 
-/* Contact Details */
-.contact-details h3 {
-    font-size: 1.1rem;
-    margin-bottom: 4px;
-    color: var(--pearl-white);
-    font-weight: 600;
-}
+        /* Contact Details */
+        .contact-details h3 {
+            font-size: 1.1rem;
+            margin-bottom: 4px;
+            color: var(--pearl-white);
+            font-weight: 600;
+        }
 
-.contact-details a {
-    color: rgba(248, 248, 255, 0.85);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
+        .contact-details a {
+            color: rgba(248, 248, 255, 0.85);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
 
-.contact-details a:hover {
-    color: var(--rose-pink);
-}
+        .contact-details a:hover {
+            color: var(--rose-pink);
+        }
 
-/* Contact Form */
-.contact-form {
-    background: rgba(20, 20, 20, 0.7);
-    backdrop-filter: blur(12px);
-    border-radius: 15px;
-    padding: 30px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
-}
+        /* Enhanced Contact Form */
+        .contact-form {
+            background: rgba(20, 20, 20, 0.7);
+            backdrop-filter: blur(12px);
+            border-radius: 15px;
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+        }
 
-.form-group {
-    margin-bottom: 20px;
-}
+        .form-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 105, 180, 0.2);
+        }
 
-.form-group label {
-    display: block;
-    margin-bottom: 6px;
-    color: var(--pearl-white);
-    font-weight: 500;
-}
+        .form-header h3 {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+            color: var(--pearl-white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
 
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 12px 15px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
-    color: var(--pearl-white);
-    font-family: 'Poppins', sans-serif;
-    transition: all 0.3s ease;
-}
+        .form-header h3 i {
+            color: var(--rose-pink);
+        }
 
-.form-group input:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: var(--rose-pink);
-    box-shadow: 0 0 6px rgba(255, 105, 180, 0.4);
-}
+        .form-header p {
+            color: rgba(248, 248, 255, 0.7);
+            font-size: 0.95rem;
+        }
 
-.form-group textarea {
-    min-height: 120px;
-    resize: vertical;
-}
+        .form-group {
+            position: relative;
+            margin-bottom: 25px;
+        }
 
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--pearl-white);
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px 45px 15px 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            color: var(--pearl-white);
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--rose-pink);
+            background: rgba(255, 105, 180, 0.05);
+            box-shadow: 0 0 0 3px rgba(255, 105, 180, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .form-group textarea {
+            min-height: 140px;
+            resize: vertical;
+            line-height: 1.6;
+        }
+
+        .input-icon {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: rgba(248, 248, 255, 0.5);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .textarea-icon {
+            top: 25px;
+            transform: none;
+        }
+
+        .form-group input:focus + .input-icon,
+        .form-group textarea:focus + .textarea-icon {
+            color: var(--rose-pink);
+        }
+
+        #submitBtn {
+            width: 100%;
+            padding: 16px;
+            font-size: 1.1rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        #submitBtn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none !important;
+        }
+
+        .btn-text, .btn-loading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .form-status {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 12px;
+            text-align: center;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: none;
+        }
+
+        .form-status.success {
+            background: rgba(76, 175, 80, 0.1);
+            border: 1px solid rgba(76, 175, 80, 0.3);
+            color: #4CAF50;
+            display: block;
+        }
+
+        .form-status.error {
+            background: rgba(244, 67, 54, 0.1);
+            border: 1px solid rgba(244, 67, 54, 0.3);
+            color: #F44336;
+            display: block;
+        }
+
+        .form-status.warning {
+            background: rgba(255, 152, 0, 0.1);
+            border: 1px solid rgba(255, 152, 0, 0.3);
+            color: #FF9800;
+            display: block;
+        }
+
+        /* Quick Response Info */
+        .quick-response {
+            background: rgba(255, 105, 180, 0.1);
+            border: 1px solid rgba(255, 105, 180, 0.3);
+        }
 
         /* Footer */
         footer {
@@ -1086,6 +1187,18 @@
             font-size: 0.9rem;
         }
 
+        /* Confetti Animation */
+        @keyframes confetti-fall {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
         /* Responsive Design */
         @media (max-width: 992px) {
             .hero-content {
@@ -1112,7 +1225,7 @@
                 left: 0;
             }
             
-            #experience::before {
+            .timeline::before {
                 left: 30px;
             }
             
@@ -1170,6 +1283,21 @@
             
             .section-title h2 {
                 font-size: 2rem;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .form-group input,
+            .form-group textarea {
+                padding: 12px 40px 12px 12px;
+            }
+            
+            .input-icon {
+                right: 12px;
+                font-size: 0.9rem;
             }
         }
 
@@ -1354,28 +1482,28 @@
     </nav>
 
     <!-- Hero Section -->
-<section id="hero">
-    <div class="container">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1>Hi, I'm <span>Sahana L</span></h1>
-                <div class="title">Aspiring AWS Cloud Architect & AI & ML Enthusiast</div>
-                <div class="subtitle">Transforming ideas into scalable cloud solutions and intelligent AI applications</div>
-                <div class="social-icons">
-                    <a href="https://github.com/SahanaCodes7" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/sahana-l2024/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="mailto:sahanal2024@gmail.com"><i class="fas fa-envelope"></i></a>
+    <section id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Hi, I'm <span>Sahana L</span></h1>
+                    <div class="title">Aspiring AWS Cloud Architect & AI & ML Enthusiast</div>
+                    <div class="subtitle">Transforming ideas into scalable cloud solutions and intelligent AI applications</div>
+                    <div class="social-icons">
+                        <a href="https://github.com/SahanaCodes7" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/sahana-l2024/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="mailto:sahanal2024@gmail.com"><i class="fas fa-envelope"></i></a>
+                    </div>
+                    <a href="docs/resume.pdf" target="_blank" class="btn">Download Resume</a>
                 </div>
-                <a href="docs/resume.pdf" target="_blank" class="btn">Download Resume</a>
-            </div>
-            <div class="hero-image">
-                <div class="image-placeholder">
-                    <img src="images/2.jpg" alt="Sahana L" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%; position: relative; z-index: 2;">
+                <div class="hero-image">
+                    <div class="image-placeholder">
+                        <img src="images/2.jpg" alt="Sahana L" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%; position: relative; z-index: 2;">
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- About Section -->
     <section id="about">
@@ -1510,20 +1638,18 @@
                     </div>
                 </div>
                 <div class="project-card fade-in">
-    <div class="project-header">
-        <h3><i class="fas fa-shield-alt"></i> SQL Injection Prevention System</h3>
-    </div>
-    <div class="project-body">
-        <p class="project-description">
-            A security-focused project to detect and prevent SQL Injection attacks, ensuring safe database interactions and protecting sensitive data.
-        </p>
-        <div class="project-links">
-            <a href="https://github.com/SahanaCodes7/CodeAlpha_SQL_Injection_Prevention" target="_blank">
-                <i class="fab fa-github"></i> GitHub
-            </a>
+                    <div class="project-header">
+                        <h3><i class="fas fa-shield-alt"></i> SQL Injection Prevention System</h3>
+                    </div>
+                    <div class="project-body">
+                        <p class="project-description">A security-focused project to detect and prevent SQL Injection attacks, ensuring safe database interactions and protecting sensitive data.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/SahanaCodes7/CodeAlpha_SQL_Injection_Prevention" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
     </section>
 
     <!-- Certifications Section -->
@@ -1638,7 +1764,7 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Enhanced Contact Section -->
     <section id="contact">
         <div class="container">
             <div class="section-title">
@@ -1652,7 +1778,7 @@
                         </div>
                         <div class="contact-details">
                             <h3>GitHub</h3>
-                            <p><a href="https://github.com/SahanaCodes27" target="_blank">github.com/SahanaCodes27</a></p>
+                            <p><a href="https://github.com/SahanaCodes7" target="_blank">github.com/SahanaCodes7</a></p>
                         </div>
                     </div>
                     <div class="contact-item fade-in">
@@ -1682,22 +1808,61 @@
                             <p><a href="tel:9986098979">9986098979</a></p>
                         </div>
                     </div>
+                    
+                    <!-- Quick Response Info -->
+                    <div class="contact-item fade-in quick-response">
+                        <div class="contact-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Quick Response</h3>
+                            <p>I typically respond within 24 hours</p>
+                        </div>
+                    </div>
                 </div>
+                
+                <!-- Enhanced Contact Form -->
                 <div class="contact-form fade-in">
+                    <div class="form-header">
+                        <h3><i class="fas fa-paper-plane"></i> Send me a message</h3>
+                        <p>Let's discuss your next project or opportunity</p>
+                    </div>
+                    
                     <form id="contactForm">
                         <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" required>
+                            <label for="name">Name *</label>
+                            <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                            <div class="input-icon">
+                                <i class="fas fa-user"></i>
+                            </div>
                         </div>
+                        
                         <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" required>
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required placeholder="Enter your email address">
+                            <div class="input-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
                         </div>
+                        
                         <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" required></textarea>
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" rows="6" required placeholder="Tell me about your project, collaboration opportunity, or any questions you have..."></textarea>
+                            <div class="input-icon textarea-icon">
+                                <i class="fas fa-comment"></i>
+                            </div>
                         </div>
-                        <button type="submit" class="btn">Send Message</button>
+                        
+                        <button type="submit" class="btn" id="submitBtn">
+                            <span class="btn-text">
+                                <i class="fas fa-paper-plane"></i> Send Message
+                            </span>
+                            <span class="btn-loading" style="display: none;">
+                                <i class="fas fa-spinner fa-spin"></i> Sending...
+                            </span>
+                        </button>
+                        
+                        <div class="form-status" id="formStatus"></div>
                     </form>
                 </div>
             </div>
@@ -1737,9 +1902,6 @@
                 
                 cursorDot.style.left = `${posX}px`;
                 cursorDot.style.top = `${posY}px`;
-                
-                // cursorOutline.style.left = `${posX}px`;
-                // cursorOutline.style.top = `${posY}px`;
                 
                 cursorOutline.animate({
                     left: `${posX}px`,
@@ -1814,28 +1976,143 @@
                 });
             });
             
-            // Form submission
+            // Enhanced Contact Form Handling with Google Apps Script
+            const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwYXE2G2Ld1OSU-pAopyelbRR_fX1kjYPgXdKK_MDE9Aayhfc7nf9HsSfN2PZBoI10a/exec'; // REPLACE WITH YOUR ACTUAL URL
+            
             const contactForm = document.getElementById('contactForm');
+            const submitBtn = document.getElementById('submitBtn');
+            const btnText = submitBtn.querySelector('.btn-text');
+            const btnLoading = submitBtn.querySelector('.btn-loading');
+            const formStatus = document.getElementById('formStatus');
+            
             if (contactForm) {
-                contactForm.addEventListener('submit', function(e) {
+                contactForm.addEventListener('submit', async function(e) {
                     e.preventDefault();
                     
-                    // Simple form validation
-                    const name = document.getElementById('name').value;
-                    const email = document.getElementById('email').value;
-                    const message = document.getElementById('message').value;
+                    const name = document.getElementById('name').value.trim();
+                    const email = document.getElementById('email').value.trim();
+                    const message = document.getElementById('message').value.trim();
                     
-                    if (name && email && message) {
-                        // Here you would typically send the form data to a server
-                        alert('Thank you for your message! I will get back to you soon.');
-                        contactForm.reset();
+                    // Validation
+                    if (!name || !email || !message) {
+                        showFormStatus('⚠️ Please fill in all required fields.', 'error');
+                        return;
+                    }
+                    
+                    if (!isValidEmail(email)) {
+                        showFormStatus('⚠️ Please enter a valid email address.', 'error');
+                        return;
+                    }
+                    
+                    if (message.length < 10) {
+                        showFormStatus('⚠️ Please write a more detailed message (at least 10 characters).', 'warning');
+                        return;
+                    }
+                    
+                    // Submit form
+                    setLoadingState(true);
+                    hideFormStatus();
+                    
+                    try {
+                        const response = await fetch(GOOGLE_SCRIPT_URL, {
+                            method: 'POST',
+                            body: JSON.stringify({
+                                name: name,
+                                email: email,
+                                message: message
+                            }),
+                            headers: {
+                                'Content-Type': 'application/json'
+                            }
+                        });
+                        
+                        const result = await response.json();
+                        
+                        if (result.result === 'success') {
+                            showFormStatus('✅ Message sent successfully! I\'ll get back to you within 24 hours. Check your email for confirmation.', 'success');
+                            contactForm.reset();
+                            createConfetti();
+                        } else {
+                            throw new Error(result.message || 'Unknown error occurred');
+                        }
+                        
+                    } catch (error) {
+                        console.error('Form submission error:', error);
+                        showFormStatus('❌ Failed to send message. Please email me directly at sahanal2024@gmail.com or try again later.', 'error');
+                    } finally {
+                        setLoadingState(false);
                     }
                 });
+            }
+            
+            // Helper functions for contact form
+            function setLoadingState(loading) {
+                if (loading) {
+                    btnText.style.display = 'none';
+                    btnLoading.style.display = 'flex';
+                    submitBtn.disabled = true;
+                } else {
+                    btnText.style.display = 'flex';
+                    btnLoading.style.display = 'none';
+                    submitBtn.disabled = false;
+                }
+            }
+            
+            function showFormStatus(message, type) {
+                formStatus.textContent = message;
+                formStatus.className = `form-status ${type}`;
+                formStatus.style.display = 'block';
+                
+                // Auto-hide success messages after 8 seconds
+                if (type === 'success') {
+                    setTimeout(() => {
+                        formStatus.style.display = 'none';
+                    }, 8000);
+                }
+            }
+            
+            function hideFormStatus() {
+                formStatus.style.display = 'none';
+            }
+            
+            function isValidEmail(email) {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return emailRegex.test(email);
+            }
+            
+            // Confetti effect for success
+            function createConfetti() {
+                const confettiCount = 60;
+                const colors = ['#ff69b4', '#da70d6', '#a259ff', '#ff6f61', '#ffd700', '#87ceeb'];
+                
+                for (let i = 0; i < confettiCount; i++) {
+                    setTimeout(() => {
+                        const confetti = document.createElement('div');
+                        confetti.style.cssText = `
+                            position: fixed;
+                            width: ${Math.random() * 12 + 6}px;
+                            height: ${Math.random() * 12 + 6}px;
+                            background: ${colors[Math.floor(Math.random() * colors.length)]};
+                            top: -20px;
+                            left: ${Math.random() * 100}vw;
+                            border-radius: ${Math.random() > 0.5 ? '50%' : '2px'};
+                            pointer-events: none;
+                            z-index: 9999;
+                            animation: confetti-fall ${Math.random() * 3 + 2}s linear forwards;
+                            opacity: ${Math.random() * 0.7 + 0.3};
+                        `;
+                        
+                        document.body.appendChild(confetti);
+                        
+                        setTimeout(() => {
+                            if (confetti.parentNode) {
+                                confetti.remove();
+                            }
+                        }, 5000);
+                    }, i * 30);
+                }
             }
         });
     </script>
 </body>
-
 </html>
-
-
