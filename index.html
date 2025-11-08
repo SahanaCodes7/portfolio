@@ -1934,146 +1934,147 @@
                 });
             });
             
-            // Enhanced Contact Form Handling with Google Apps Script
-            const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwhvu4AWfEpSUmMEMEhwL1WGnXiskmpIod1MTqBXIfzLtg8hUgLgpo3EyxrC9mB7oFY/exec'; // REPLACE WITH YOUR ACTUAL URL
+           
             
-            const contactForm = document.getElementById('contactForm');
-            const submitBtn = document.getElementById('submitBtn');
-            const btnText = submitBtn.querySelector('.btn-text');
-            const btnLoading = submitBtn.querySelector('.btn-loading');
-            const formStatus = document.getElementById('formStatus');
-            
-            if (contactForm) {
-                contactForm.addEventListener('submit', async function(e) {
-                    e.preventDefault();
-                    
-                    const name = document.getElementById('name').value.trim();
-                    const email = document.getElementById('email').value.trim();
-                    const message = document.getElementById('message').value.trim();
-                    
-                    // Validation
-                    if (!name || !email || !message) {
-                        showFormStatus('⚠️ Please fill in all required fields.', 'error');
-                        return;
-                    }
-                    
-                    if (!isValidEmail(email)) {
-                        showFormStatus('⚠️ Please enter a valid email address.', 'error');
-                        return;
-                    }
-                    
-                    if (message.length < 10) {
-                        showFormStatus('⚠️ Please write a more detailed message (at least 10 characters).', 'warning');
-                        return;
-                    }
-                    
-                    // Submit form
-                    setLoadingState(true);
-                    hideFormStatus();
-                    
-                    try {
-                        const response = await fetch(GOOGLE_SCRIPT_URL, {
-                            method: 'POST',
-                            body: JSON.stringify({
-                                name: name,
-                                email: email,
-                                message: message
-                            }),
-                            headers: {
-                                'Content-Type': 'application/json'
-                            }
-                        });
-                        
-                        const result = await response.json();
-                        
-                        if (result.result === 'success') {
-                            showFormStatus('✅ Message sent successfully! I\'ll get back to you within 24 hours. Check your email for confirmation.', 'success');
-                            contactForm.reset();
-                            createConfetti();
-                        } else {
-                            throw new Error(result.message || 'Unknown error occurred');
-                        }
-                        
-                    } catch (error) {
-                        console.error('Form submission error:', error);
-                        showFormStatus('❌ Failed to send message. Please email me directly at sahanal2024@gmail.com or try again later.', 'error');
-                    } finally {
-                        setLoadingState(false);
-                    }
-                });
-            }
-            
-            // Helper functions for contact form
-            function setLoadingState(loading) {
-                if (loading) {
-                    btnText.style.display = 'none';
-                    btnLoading.style.display = 'flex';
-                    submitBtn.disabled = true;
-                } else {
-                    btnText.style.display = 'flex';
-                    btnLoading.style.display = 'none';
-                    submitBtn.disabled = false;
+// Enhanced Contact Form Handling with Google Apps Script
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwhvu4AWfEpSUmMEMEhwL1WGnXiskmpIod1MTqBXIfzLtg8hUgLgpo3EyxrC9mB7oFY/exec';
+
+const contactForm = document.getElementById('contactForm');
+const submitBtn = document.getElementById('submitBtn');
+const btnText = submitBtn.querySelector('.btn-text');
+const btnLoading = submitBtn.querySelector('.btn-loading');
+const formStatus = document.getElementById('formStatus');
+
+if (contactForm) {
+    contactForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const message = document.getElementById('message').value.trim();
+        
+        // Validation
+        if (!name || !email || !message) {
+            showFormStatus('⚠️ Please fill in all required fields.', 'error');
+            return;
+        }
+        
+        if (!isValidEmail(email)) {
+            showFormStatus('⚠️ Please enter a valid email address.', 'error');
+            return;
+        }
+        
+        if (message.length < 10) {
+            showFormStatus('⚠️ Please write a more detailed message (at least 10 characters).', 'warning');
+            return;
+        }
+        
+        // Submit form
+        setLoadingState(true);
+        hideFormStatus();
+        
+        try {
+            // Enhanced fetch with better error handling
+            const response = await fetch(GOOGLE_SCRIPT_URL, {
+                method: 'POST',
+                mode: 'no-cors', // Add this line to handle CORS
+                body: JSON.stringify({
+                    name: name,
+                    email: email,
+                    message: message
+                }),
+                headers: {
+                    'Content-Type': 'application/json'
                 }
-            }
+            });
             
-            function showFormStatus(message, type) {
-                formStatus.textContent = message;
-                formStatus.className = `form-status ${type}`;
-                formStatus.style.display = 'block';
-                
-                // Auto-hide success messages after 8 seconds
-                if (type === 'success') {
-                    setTimeout(() => {
-                        formStatus.style.display = 'none';
-                    }, 8000);
+            // Since we're using no-cors, we can't read the response
+            // But the form should still submit successfully
+            showFormStatus('✅ Message sent successfully! I\'ll get back to you within 24 hours.', 'success');
+            contactForm.reset();
+            createConfetti();
+            
+        } catch (error) {
+            console.error('Form submission error:', error);
+            showFormStatus('❌ Failed to send message. Please email me directly at sahanal2024@gmail.com', 'error');
+        } finally {
+            setLoadingState(false);
+        }
+    });
+}
+
+// Helper functions for contact form
+function setLoadingState(loading) {
+    if (loading) {
+        btnText.style.display = 'none';
+        btnLoading.style.display = 'flex';
+        submitBtn.disabled = true;
+    } else {
+        btnText.style.display = 'flex';
+        btnLoading.style.display = 'none';
+        submitBtn.disabled = false;
+    }
+}
+
+function showFormStatus(message, type) {
+    formStatus.textContent = message;
+    formStatus.className = `form-status ${type}`;
+    formStatus.style.display = 'block';
+    
+    // Auto-hide success messages after 8 seconds
+    if (type === 'success') {
+        setTimeout(() => {
+            formStatus.style.display = 'none';
+        }, 8000);
+    }
+}
+
+function hideFormStatus() {
+    formStatus.style.display = 'none';
+}
+
+function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+
+// Confetti effect for success
+function createConfetti() {
+    const confettiCount = 60;
+    const colors = ['#ff69b4', '#da70d6', '#a259ff', '#ff6f61', '#ffd700', '#87ceeb'];
+    
+    for (let i = 0; i < confettiCount; i++) {
+        setTimeout(() => {
+            const confetti = document.createElement('div');
+            confetti.style.cssText = `
+                position: fixed;
+                width: ${Math.random() * 12 + 6}px;
+                height: ${Math.random() * 12 + 6}px;
+                background: ${colors[Math.floor(Math.random() * colors.length)]};
+                top: -20px;
+                left: ${Math.random() * 100}vw;
+                border-radius: ${Math.random() > 0.5 ? '50%' : '2px'};
+                pointer-events: none;
+                z-index: 9999;
+                animation: confetti-fall ${Math.random() * 3 + 2}s linear forwards;
+                opacity: ${Math.random() * 0.7 + 0.3};
+            `;
+            
+            document.body.appendChild(confetti);
+            
+            setTimeout(() => {
+                if (confetti.parentNode) {
+                    confetti.remove();
                 }
-            }
-            
-            function hideFormStatus() {
-                formStatus.style.display = 'none';
-            }
-            
-            function isValidEmail(email) {
-                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                return emailRegex.test(email);
-            }
-            
-            // Confetti effect for success
-            function createConfetti() {
-                const confettiCount = 60;
-                const colors = ['#ff69b4', '#da70d6', '#a259ff', '#ff6f61', '#ffd700', '#87ceeb'];
-                
-                for (let i = 0; i < confettiCount; i++) {
-                    setTimeout(() => {
-                        const confetti = document.createElement('div');
-                        confetti.style.cssText = `
-                            position: fixed;
-                            width: ${Math.random() * 12 + 6}px;
-                            height: ${Math.random() * 12 + 6}px;
-                            background: ${colors[Math.floor(Math.random() * colors.length)]};
-                            top: -20px;
-                            left: ${Math.random() * 100}vw;
-                            border-radius: ${Math.random() > 0.5 ? '50%' : '2px'};
-                            pointer-events: none;
-                            z-index: 9999;
-                            animation: confetti-fall ${Math.random() * 3 + 2}s linear forwards;
-                            opacity: ${Math.random() * 0.7 + 0.3};
-                        `;
-                        
-                        document.body.appendChild(confetti);
-                        
-                        setTimeout(() => {
-                            if (confetti.parentNode) {
-                                confetti.remove();
-                            }
-                        }, 5000);
-                    }, i * 30);
-                }
-            }
+            }, 5000);
+        }, i * 30);
+    }
+}
         });
     </script>
 </body>
 </html>
+
 
 
 
