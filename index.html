@@ -1331,31 +1331,6 @@
             transform: translateY(0);
         }
 
-        /* Custom Cursor */
-        .cursor-dot {
-            width: 8px;
-            height: 8px;
-            background-color: var(--rose-pink);
-            border-radius: 50%;
-            position: fixed;
-            pointer-events: none;
-            z-index: 9999;
-            transform: translate(-50%, -50%);
-            transition: transform 0.1s ease;
-        }
-
-        .cursor-outline {
-            width: 40px;
-            height: 40px;
-            border: 2px solid var(--rose-pink);
-            border-radius: 50%;
-            position: fixed;
-            pointer-events: none;
-            z-index: 9998;
-            transform: translate(-50%, -50%);
-            transition: all 0.2s ease;
-        }
-
         /* Loading Animation */
         .loading-screen {
             position: fixed;
@@ -1457,10 +1432,6 @@
         <div class="crystal-orb"></div>
     </div>
 
-    <!-- Custom Cursor -->
-    <div class="cursor-dot"></div>
-    <div class="cursor-outline"></div>
-
     <!-- Navigation -->
     <nav>
         <div class="container">
@@ -1498,7 +1469,7 @@
                 </div>
                 <div class="hero-image">
                     <div class="image-placeholder">
-                        <img src="images/2.jpg" alt="Sahana L" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%; position: relative; z-index: 2;">
+                        <i class="fas fa-user"></i>
                     </div>
                 </div>
             </div>
@@ -1586,78 +1557,71 @@
     </section>
 
     <!-- Projects Section -->
-<section id="projects">
-    <div class="container">
-        <div class="section-title">
-            <h2>Projects</h2>
+    <section id="projects">
+        <div class="container">
+            <div class="section-title">
+                <h2>Projects</h2>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card fade-in">
+                    <div class="project-header">
+                        <h3><i class="fas fa-brain"></i> Alzheimer's Chatbot</h3>
+                    </div>
+                    <div class="project-body">
+                        <p class="project-description">Cloud-ready AI chatbot for Alzheimer's screening and recommendations using Explainable NLP and secure role-based workflows.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/SahanaCodes7/alzheimer_chatbot_flask" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card fade-in">
+                    <div class="project-header">
+                        <h3><i class="fas fa-graduation-cap"></i> Course Completion Predictor</h3>
+                    </div>
+                    <div class="project-body">
+                        <p class="project-description">End-to-end ML pipeline (FastAPI, Docker, AWS) predicting online student completion from real engagement data.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/SahanaCodes7/online-course-completion-prediction" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card fade-in">
+                    <div class="project-header">
+                        <h3><i class="fas fa-university"></i> Campusflow ERP</h3>
+                    </div>
+                    <div class="project-body">
+                        <p class="project-description">Full-stack web portal for college workflow: academics, assignments, dashboard, file uploads, and real-time notification system.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/SahanaCodes7/Campusflow" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card fade-in">
+                    <div class="project-header">
+                        <h3><i class="fas fa-cloud"></i> CloudGenie</h3>
+                    </div>
+                    <div class="project-body">
+                        <p class="project-description">AI-powered AWS cloud advisor offering real-time cloud architecture recommendations and troubleshooting.</p>
+                        <div class="project-links">
+                            <a href="https://partyrock.aws/u/Sahana3020/WL4fv3DvW/CloudGenie" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="https://github.com/SahanaCodes7/CloudGenie" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card fade-in">
+                    <div class="project-header">
+                        <h3><i class="fas fa-globe"></i> Portfolio (AWS S3/CloudFront)</h3>
+                    </div>
+                    <div class="project-body">
+                        <p class="project-description">Personal static portfolio hosted on AWS S3 and CloudFront for global high-availability and automated disaster recovery.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/SahanaCodes7/aws-s3-cloudfront-portfolio" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="projects-grid">
-
-            <div class="project-card fade-in">
-                <div class="project-header">
-                    <h3><i class="fas fa-brain"></i> Alzheimer’s Chatbot</h3>
-                </div>
-                <div class="project-body">
-                    <p class="project-description">Cloud-ready AI chatbot for Alzheimer’s screening and recommendations using Explainable NLP and secure role-based workflows.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/SahanaCodes7/alzheimer_chatbot_flask" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card fade-in">
-                <div class="project-header">
-                    <h3><i class="fas fa-graduation-cap"></i> Course Completion Predictor</h3>
-                </div>
-                <div class="project-body">
-                    <p class="project-description">End-to-end ML pipeline (FastAPI, Docker, AWS) predicting online student completion from real engagement data.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/SahanaCodes7/online-course-completion-prediction" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card fade-in">
-                <div class="project-header">
-                    <h3><i class="fas fa-university"></i> Campusflow ERP</h3>
-                </div>
-                <div class="project-body">
-                    <p class="project-description">Full-stack web portal for college workflow: academics, assignments, dashboard, file uploads, and real-time notification system.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/SahanaCodes7/Campusflow" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card fade-in">
-                <div class="project-header">
-                    <h3><i class="fas fa-cloud"></i> CloudGenie</h3>
-                </div>
-                <div class="project-body">
-                    <p class="project-description">AI-powered AWS cloud advisor offering real-time cloud architecture recommendations and troubleshooting.</p>
-                    <div class="project-links">
-                        <a href="https://partyrock.aws/u/Sahana3020/WL4fv3DvW/CloudGenie" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                        <a href="https://github.com/SahanaCodes7/CloudGenie" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card fade-in">
-                <div class="project-header">
-                    <h3><i class="fas fa-globe"></i> Portfolio (AWS S3/CloudFront)</h3>
-                </div>
-                <div class="project-body">
-                    <p class="project-description">Personal static portfolio hosted on AWS S3 and CloudFront for global high-availability and automated disaster recovery.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/SahanaCodes7/aws-s3-cloudfront-portfolio" target="_blank"><i class="fab fa-github"></i> Github</a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-
+    </section>
 
     <!-- Certifications Section -->
     <section id="certifications">
@@ -1817,7 +1781,6 @@
                     </div>
                 </div>
                 
-                
                 <!-- Enhanced Contact Form -->
                 <div class="contact-form fade-in">
                     <div class="form-header">
@@ -1889,37 +1852,6 @@
                 document.querySelector('.loading-screen').classList.add('hidden');
             }, 2000);
 
-            // Custom cursor
-            const cursorDot = document.querySelector('.cursor-dot');
-            const cursorOutline = document.querySelector('.cursor-outline');
-            
-            document.addEventListener('mousemove', function(e) {
-                const posX = e.clientX;
-                const posY = e.clientY;
-                
-                cursorDot.style.left = `${posX}px`;
-                cursorDot.style.top = `${posY}px`;
-                
-                cursorOutline.animate({
-                    left: `${posX}px`,
-                    top: `${posY}px`
-                }, { duration: 500, fill: 'forwards' });
-            });
-            
-            // Click effects on buttons and links
-            const buttons = document.querySelectorAll('a, button');
-            buttons.forEach(button => {
-                button.addEventListener('mouseenter', () => {
-                    cursorDot.style.transform = 'translate(-50%, -50%) scale(1.5)';
-                    cursorOutline.style.transform = 'translate(-50%, -50%) scale(1.5)';
-                });
-                
-                button.addEventListener('mouseleave', () => {
-                    cursorDot.style.transform = 'translate(-50%, -50%) scale(1)';
-                    cursorOutline.style.transform = 'translate(-50%, -50%) scale(1)';
-                });
-            });
-            
             // Scroll to top functionality
             const scrollBtn = document.querySelector('.scroll-indicator');
             scrollBtn.addEventListener('click', () => {
@@ -1973,152 +1905,141 @@
                 });
             });
             
-           
-            
-// Enhanced Contact Form Handling with Google Apps Script
-const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwhvu4AWfEpSUmMEMEhwL1WGnXiskmpIod1MTqBXIfzLtg8hUgLgpo3EyxrC9mB7oFY/exec';
+            // Enhanced Contact Form Handling with Google Apps Script
+            const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwhvu4AWfEpSUmMEMEhwL1WGnXiskmpIod1MTqBXIfzLtg8hUgLgpo3EyxrC9mB7oFY/exec';
 
-const contactForm = document.getElementById('contactForm');
-const submitBtn = document.getElementById('submitBtn');
-const btnText = submitBtn.querySelector('.btn-text');
-const btnLoading = submitBtn.querySelector('.btn-loading');
-const formStatus = document.getElementById('formStatus');
+            const contactForm = document.getElementById('contactForm');
+            const submitBtn = document.getElementById('submitBtn');
+            const btnText = submitBtn.querySelector('.btn-text');
+            const btnLoading = submitBtn.querySelector('.btn-loading');
+            const formStatus = document.getElementById('formStatus');
 
-if (contactForm) {
-    contactForm.addEventListener('submit', async function(e) {
-        e.preventDefault();
-        
-        const name = document.getElementById('name').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const message = document.getElementById('message').value.trim();
-        
-        // Validation
-        if (!name || !email || !message) {
-            showFormStatus('⚠️ Please fill in all required fields.', 'error');
-            return;
-        }
-        
-        if (!isValidEmail(email)) {
-            showFormStatus('⚠️ Please enter a valid email address.', 'error');
-            return;
-        }
-        
-        if (message.length < 10) {
-            showFormStatus('⚠️ Please write a more detailed message (at least 10 characters).', 'warning');
-            return;
-        }
-        
-        // Submit form
-        setLoadingState(true);
-        hideFormStatus();
-        
-        try {
-            // Enhanced fetch with better error handling
-            const response = await fetch(GOOGLE_SCRIPT_URL, {
-                method: 'POST',
-                mode: 'no-cors', // Add this line to handle CORS
-                body: JSON.stringify({
-                    name: name,
-                    email: email,
-                    message: message
-                }),
-                headers: {
-                    'Content-Type': 'application/json'
+            if (contactForm) {
+                contactForm.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+                    
+                    const name = document.getElementById('name').value.trim();
+                    const email = document.getElementById('email').value.trim();
+                    const message = document.getElementById('message').value.trim();
+                    
+                    // Validation
+                    if (!name || !email || !message) {
+                        showFormStatus('⚠️ Please fill in all required fields.', 'error');
+                        return;
+                    }
+                    
+                    if (!isValidEmail(email)) {
+                        showFormStatus('⚠️ Please enter a valid email address.', 'error');
+                        return;
+                    }
+                    
+                    if (message.length < 10) {
+                        showFormStatus('⚠️ Please write a more detailed message (at least 10 characters).', 'warning');
+                        return;
+                    }
+                    
+                    // Submit form
+                    setLoadingState(true);
+                    hideFormStatus();
+                    
+                    try {
+                        // Enhanced fetch with better error handling
+                        const response = await fetch(GOOGLE_SCRIPT_URL, {
+                            method: 'POST',
+                            mode: 'no-cors', // Add this line to handle CORS
+                            body: JSON.stringify({
+                                name: name,
+                                email: email,
+                                message: message
+                            }),
+                            headers: {
+                                'Content-Type': 'application/json'
+                            }
+                        });
+                        
+                        // Since we're using no-cors, we can't read the response
+                        // But the form should still submit successfully
+                        showFormStatus('✅ Message sent successfully! I\'ll get back to you within 24 hours.', 'success');
+                        contactForm.reset();
+                        createConfetti();
+                        
+                    } catch (error) {
+                        console.error('Form submission error:', error);
+                        showFormStatus('❌ Failed to send message. Please email me directly at sahanal2024@gmail.com', 'error');
+                    } finally {
+                        setLoadingState(false);
+                    }
+                });
+            }
+
+            // Helper functions for contact form
+            function setLoadingState(loading) {
+                if (loading) {
+                    btnText.style.display = 'none';
+                    btnLoading.style.display = 'flex';
+                    submitBtn.disabled = true;
+                } else {
+                    btnText.style.display = 'flex';
+                    btnLoading.style.display = 'none';
+                    submitBtn.disabled = false;
                 }
-            });
-            
-            // Since we're using no-cors, we can't read the response
-            // But the form should still submit successfully
-            showFormStatus('✅ Message sent successfully! I\'ll get back to you within 24 hours.', 'success');
-            contactForm.reset();
-            createConfetti();
-            
-        } catch (error) {
-            console.error('Form submission error:', error);
-            showFormStatus('❌ Failed to send message. Please email me directly at sahanal2024@gmail.com', 'error');
-        } finally {
-            setLoadingState(false);
-        }
-    });
-}
+            }
 
-// Helper functions for contact form
-function setLoadingState(loading) {
-    if (loading) {
-        btnText.style.display = 'none';
-        btnLoading.style.display = 'flex';
-        submitBtn.disabled = true;
-    } else {
-        btnText.style.display = 'flex';
-        btnLoading.style.display = 'none';
-        submitBtn.disabled = false;
-    }
-}
-
-function showFormStatus(message, type) {
-    formStatus.textContent = message;
-    formStatus.className = `form-status ${type}`;
-    formStatus.style.display = 'block';
-    
-    // Auto-hide success messages after 8 seconds
-    if (type === 'success') {
-        setTimeout(() => {
-            formStatus.style.display = 'none';
-        }, 8000);
-    }
-}
-
-function hideFormStatus() {
-    formStatus.style.display = 'none';
-}
-
-function isValidEmail(email) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-}
-
-// Confetti effect for success
-function createConfetti() {
-    const confettiCount = 60;
-    const colors = ['#ff69b4', '#da70d6', '#a259ff', '#ff6f61', '#ffd700', '#87ceeb'];
-    
-    for (let i = 0; i < confettiCount; i++) {
-        setTimeout(() => {
-            const confetti = document.createElement('div');
-            confetti.style.cssText = `
-                position: fixed;
-                width: ${Math.random() * 12 + 6}px;
-                height: ${Math.random() * 12 + 6}px;
-                background: ${colors[Math.floor(Math.random() * colors.length)]};
-                top: -20px;
-                left: ${Math.random() * 100}vw;
-                border-radius: ${Math.random() > 0.5 ? '50%' : '2px'};
-                pointer-events: none;
-                z-index: 9999;
-                animation: confetti-fall ${Math.random() * 3 + 2}s linear forwards;
-                opacity: ${Math.random() * 0.7 + 0.3};
-            `;
-            
-            document.body.appendChild(confetti);
-            
-            setTimeout(() => {
-                if (confetti.parentNode) {
-                    confetti.remove();
+            function showFormStatus(message, type) {
+                formStatus.textContent = message;
+                formStatus.className = `form-status ${type}`;
+                formStatus.style.display = 'block';
+                
+                // Auto-hide success messages after 8 seconds
+                if (type === 'success') {
+                    setTimeout(() => {
+                        formStatus.style.display = 'none';
+                    }, 8000);
                 }
-            }, 5000);
-        }, i * 30);
-    }
-}
+            }
+
+            function hideFormStatus() {
+                formStatus.style.display = 'none';
+            }
+
+            function isValidEmail(email) {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return emailRegex.test(email);
+            }
+
+            // Confetti effect for success
+            function createConfetti() {
+                const confettiCount = 60;
+                const colors = ['#ff69b4', '#da70d6', '#a259ff', '#ff6f61', '#ffd700', '#87ceeb'];
+                
+                for (let i = 0; i < confettiCount; i++) {
+                    setTimeout(() => {
+                        const confetti = document.createElement('div');
+                        confetti.style.cssText = `
+                            position: fixed;
+                            width: ${Math.random() * 12 + 6}px;
+                            height: ${Math.random() * 12 + 6}px;
+                            background: ${colors[Math.floor(Math.random() * colors.length)]};
+                            top: -20px;
+                            left: ${Math.random() * 100}vw;
+                            border-radius: ${Math.random() > 0.5 ? '50%' : '2px'};
+                            pointer-events: none;
+                            z-index: 9999;
+                            animation: confetti-fall ${Math.random() * 3 + 2}s linear forwards;
+                            opacity: ${Math.random() * 0.7 + 0.3};
+                        `;
+                        
+                        document.body.appendChild(confetti);
+                        
+                        setTimeout(() => {
+                            if (confetti.parentNode) {
+                                confetti.remove();
+                            }
+                        }, 5000);
+                    }, i * 30);
+                }
+            }
         });
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
